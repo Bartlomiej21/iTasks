@@ -1,4 +1,4 @@
-public class Task1 {
+public class Task4 {
 
     /*
     TODO: write a program to substitute 2 values in place without using additional variables and print them out
@@ -9,10 +9,13 @@ public class Task1 {
     }
 
     public static void solution1(int a, int b) {
-
+        b = b - a;
+        a = a + b;
+        b = a - b;
+        System.out.println(a + " " + b);
     }
 
     public static void solution2(int a, int b) {
-
+        System.out.println(b + " " + a);
     }
 }

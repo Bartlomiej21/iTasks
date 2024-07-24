@@ -20,6 +20,16 @@ public class Task1 {
     }
 
     public static boolean solution(int a) {
-        return false;
+        String number = String.valueOf(a);
+        int l = 0;
+        int r = number.length() - 1;
+        while (l<r) {
+            if (number.charAt(l) != number.charAt(r)) {
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;
     }
 }

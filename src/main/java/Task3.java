@@ -1,4 +1,6 @@
-public class Task2 {
+import java.time.Year;
+
+public class Task3 {
     /*
     TODO: write a program to check if given year is a leap year
      */
@@ -14,10 +16,22 @@ public class Task2 {
     }
 
     public static void solution1(int y) {
-
+        if (y % 400 == 0 ) {
+            System.out.println(y+" is a leap year");
+        } else if (y % 100 == 0 ) {
+            System.out.println(y+ " is not a leap year");
+        } else if (y % 4 == 0) {
+            System.out.println(y+ " is a leap year");
+        } else {
+            System.out.println(y+ " is not a leap year");
+        }
     }
 
     public static void solution2(int y) {
-
+        if (Year.isLeap(y)) {
+            System.out.println(y+" is a leap year");
+        } else {
+            System.out.println(y+" is not a leap year");
+        }
     }
 }
