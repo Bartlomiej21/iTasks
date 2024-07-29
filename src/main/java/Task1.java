@@ -11,7 +11,7 @@ public class Task1 {
     }
 
     public static void isPalindrome(int a) {
-        boolean isPalindrome = solution(a);
+        boolean isPalindrome = solutionTwo(a);
         if (isPalindrome) {
             System.out.println(a + " is a palindrome");
         } else {
@@ -29,6 +29,29 @@ public class Task1 {
             }
             l++;
             r--;
+        }
+        return true;
+    }
+
+    public static boolean solutionTwo(int a) {
+        int digitCount = 1;
+        int b = a;
+        while (b > 10) {
+            digitCount++;
+            b = b/10;
+        }
+
+        for (int i=0; i<digitCount; i++){
+            int div = (int)Math.pow(10, digitCount-i*2-1);
+            int firstNumber = a/div;
+            if (firstNumber != a%10) {
+                return false;
+            }
+            a = a - a%10 - (div*firstNumber);
+            a = a/10;
+            if (a < 10) {
+                return true;
+            }
         }
         return true;
     }

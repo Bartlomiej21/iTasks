@@ -26,13 +26,13 @@ public class Task2 implements Runnable {
     @Override
     public void run() {
         if (threadNum == 1) {
-            synchronized (lock1) {
+            synchronized (lock2) {
                 try {
                     Thread.sleep(1000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                synchronized (lock2) {
+                synchronized (lock1) {
                     System.out.println(threadNum);
                 }
             }
